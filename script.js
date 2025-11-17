@@ -1,21 +1,21 @@
-// Sample product data
+// Sample product data with real image URLs from Unsplash
 const products = [
-    { id: 1, name: 'Tomatoes', category: 'vegetables', price: 2.99, emoji: '🍅' },
-    { id: 2, name: 'Carrots', category: 'vegetables', price: 1.99, emoji: '🥕' },
-    { id: 3, name: 'Broccoli', category: 'vegetables', price: 3.49, emoji: '🥦' },
-    { id: 4, name: 'Bell Peppers', category: 'vegetables', price: 3.99, emoji: '🫑' },
-    { id: 5, name: 'Apples', category: 'fruits', price: 2.49, emoji: '🍎' },
-    { id: 6, name: 'Bananas', category: 'fruits', price: 1.49, emoji: '🍌' },
-    { id: 7, name: 'Oranges', category: 'fruits', price: 3.99, emoji: '🍊' },
-    { id: 8, name: 'Strawberries', category: 'fruits', price: 4.99, emoji: '🍓' },
-    { id: 9, name: 'Milk', category: 'dairy', price: 3.99, emoji: '🥛' },
-    { id: 10, name: 'Cheese', category: 'dairy', price: 5.99, emoji: '🧀' },
-    { id: 11, name: 'Yogurt', category: 'dairy', price: 2.99, emoji: '🥛' },
-    { id: 12, name: 'Butter', category: 'dairy', price: 4.49, emoji: '🧈' },
-    { id: 13, name: 'Orange Juice', category: 'beverages', price: 3.49, emoji: '🧃' },
-    { id: 14, name: 'Coffee', category: 'beverages', price: 6.99, emoji: '☕' },
-    { id: 15, name: 'Tea', category: 'beverages', price: 3.99, emoji: '🫖' },
-    { id: 16, name: 'Water', category: 'beverages', price: 1.99, emoji: '💧' }
+    { id: 1, name: 'Tomatoes', category: 'vegetables', price: 250, image: 'https://images.unsplash.com/photo-1592841494240-92d7d651fc45?w=400&h=300&fit=crop' },
+    { id: 2, name: 'Carrots', category: 'vegetables', price: 180, image: 'https://images.unsplash.com/photo-1585518419759-77fbd7d1f0bf?w=400&h=300&fit=crop' },
+    { id: 3, name: 'Broccoli', category: 'vegetables', price: 320, image: 'https://images.unsplash.com/photo-1583285694395-8daf3d08471c?w=400&h=300&fit=crop' },
+    { id: 4, name: 'Bell Peppers', category: 'vegetables', price: 380, image: 'https://images.unsplash.com/photo-1599599810694-b5ac4dd33bd1?w=400&h=300&fit=crop' },
+    { id: 5, name: 'Apples', category: 'fruits', price: 220, image: 'https://images.unsplash.com/photo-1560806e614de1200309ca8216e8440531c15ec6?w=400&h=300&fit=crop' },
+    { id: 6, name: 'Bananas', category: 'fruits', price: 150, image: 'https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=400&h=300&fit=crop' },
+    { id: 7, name: 'Oranges', category: 'fruits', price: 280, image: 'https://images.unsplash.com/photo-1582979696075-33d80c24b46e?w=400&h=300&fit=crop' },
+    { id: 8, name: 'Strawberries', category: 'fruits', price: 450, image: 'https://images.unsplash.com/photo-1585518419759-77fbd7d1f0bf?w=400&h=300&fit=crop' },
+    { id: 9, name: 'Milk', category: 'dairy', price: 380, image: 'https://images.unsplash.com/photo-1550583724-b2692b85b150?w=400&h=300&fit=crop' },
+    { id: 10, name: 'Cheese', category: 'dairy', price: 580, image: 'https://images.unsplash.com/photo-1452894169989-597421aeb8c5?w=400&h=300&fit=crop' },
+    { id: 11, name: 'Yogurt', category: 'dairy', price: 280, image: 'https://images.unsplash.com/photo-1488527266792-59a38f1e3ad5?w=400&h=300&fit=crop' },
+    { id: 12, name: 'Butter', category: 'dairy', price: 420, image: 'https://images.unsplash.com/photo-1452894169989-597421aeb8c5?w=400&h=300&fit=crop' },
+    { id: 13, name: 'Orange Juice', category: 'beverages', price: 320, image: 'https://images.unsplash.com/photo-1600271886742-f049cd1f3af0?w=400&h=300&fit=crop' },
+    { id: 14, name: 'Coffee', category: 'beverages', price: 650, image: 'https://images.unsplash.com/photo-1559056169-641ef2588b48?w=400&h=300&fit=crop' },
+    { id: 15, name: 'Tea', category: 'beverages', price: 380, image: 'https://images.unsplash.com/photo-1597318086132-e5b43e9914bc?w=400&h=300&fit=crop' },
+    { id: 16, name: 'Water', category: 'beverages', price: 180, image: 'https://images.unsplash.com/photo-1570970336561-f994cac2a2d2?w=400&h=300&fit=crop' }
 ];
 
 let cart = [];
@@ -39,11 +39,11 @@ function loadProducts(filter = 'all') {
         const productCard = document.createElement('div');
         productCard.className = 'product-card';
         productCard.innerHTML = `
-            <div class="product-image">${product.emoji}</div>
+            <div class="product-image"><img src="${product.image}" alt="${product.name}"></div>
             <div class="product-info">
                 <div class="product-name">${product.name}</div>
                 <div class="product-category">${product.category}</div>
-                <div class="product-price">$${product.price.toFixed(2)}</div>
+                <div class="product-price">Rs.${product.price.toFixed(2)}</div>
                 <button class="add-to-cart-btn" onclick="addToCart(${product.id})">Add to Cart</button>
             </div>
         `;
@@ -166,14 +166,14 @@ function displayCartItems() {
         total += itemTotal;
         html += `
             <div class="cart-item">
-                <div class="cart-item-name">${item.emoji} ${item.name}</div>
+                <div class="cart-item-name">${item.name}</div>
                 <div class="cart-item-quantity">
                     <button onclick="updateQuantity(${item.id}, -1)">−</button>
                     <span>${item.quantity}</span>
                     <button onclick="updateQuantity(${item.id}, 1)">+</button>
-                    <button class="cart-item-remove" onclick="removeFromCart(${item.id})">Remove</button>
                 </div>
-                <div style="color: var(--primary-color); font-weight: bold;">$${itemTotal.toFixed(2)}</div>
+                <div class="cart-item-price">Rs.${itemTotal.toFixed(2)}</div>
+                <button class="cart-item-remove" onclick="removeFromCart(${item.id})" title="Remove"><i class="fas fa-trash"></i></button>
             </div>
         `;
     });
@@ -203,7 +203,7 @@ function checkout() {
     }
     
     const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
-    alert(`Thank you for your order!\nTotal: $${total.toFixed(2)}\n\nYour order will be delivered soon!`);
+    alert(`Thank you for your order!\nTotal: Rs.${total.toFixed(2)}\n\nYour order will be delivered soon!`);
     cart = [];
     updateCartUI();
     closeCart();
@@ -213,6 +213,19 @@ function checkout() {
 function handleContactForm(event) {
     event.preventDefault();
     alert('Thank you for your message! We will get back to you soon.');
+    event.target.reset();
+}
+
+// Handle loyalty registration
+function handleLoyaltyRegistration(event) {
+    event.preventDefault();
+    const formData = new FormData(event.target);
+    const name = event.target.elements[0].value;
+    const email = event.target.elements[1].value;
+    const phone = event.target.elements[2].value;
+    const tier = event.target.elements[4].value;
+    
+    alert(`Welcome to FreshMart Loyalty Program, ${name}!\n\nMembership Tier: ${tier.charAt(0).toUpperCase() + tier.slice(1)}\nA confirmation email has been sent to: ${email}\n\nStart earning rewards today!`);
     event.target.reset();
 }
 

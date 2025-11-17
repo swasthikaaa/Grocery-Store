@@ -345,23 +345,25 @@ body {
 }
 
 .cart-item {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 15px;
     align-items: center;
     padding: 15px 0;
     border-bottom: 1px solid var(--border-color);
 }
 
 .cart-item-name {
-    flex-grow: 1;
     color: var(--primary-color);
     font-weight: bold;
+    word-break: break-word;
 }
 
 .cart-item-quantity {
     display: flex;
-    gap: 10px;
+    gap: 8px;
     align-items: center;
+    justify-content: center;
 }
 
 .cart-item-quantity button {
@@ -373,12 +375,33 @@ body {
     border-radius: 3px;
     cursor: pointer;
     font-weight: bold;
+    transition: all 0.2s ease;
+}
+
+.cart-item-quantity button:hover {
+    background-color: var(--accent);
+}
+
+.cart-item-price {
+    text-align: right;
+    color: var(--accent);
+    font-weight: bold;
 }
 
 .cart-item-remove {
+    width: 30px;
+    height: 30px;
+    padding: 0;
     background-color: var(--accent) !important;
     color: white !important;
-    margin-left: 10px;
+    border-radius: 50% !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cart-item-remove:hover {
+    background-color: #ff4444 !important;
 }
 
 .empty-cart {
@@ -455,6 +478,133 @@ body {
     margin-bottom: 10px;
 }
 
+/* Loyalty Section */
+.loyalty {
+    padding: 80px 20px;
+    background-color: var(--dark-bg);
+}
+
+.loyalty h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    color: var(--primary-color);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.loyalty > .container > p {
+    text-align: center;
+    color: var(--text-color);
+    margin-bottom: 40px;
+    font-size: 1.1rem;
+}
+
+.loyalty-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.loyalty-benefits {
+    background-color: var(--light-bg);
+    padding: 30px;
+    border-radius: 10px;
+    border: 1px solid var(--border-color);
+}
+
+.loyalty-benefits h3 {
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+}
+
+.benefits-list {
+    list-style: none;
+}
+
+.benefits-list li {
+    color: var(--text-color);
+    padding: 12px 0;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.benefits-list li:last-child {
+    border-bottom: none;
+}
+
+.benefits-list i {
+    color: var(--primary-color);
+    font-size: 1.3rem;
+    flex-shrink: 0;
+}
+
+.loyalty-form {
+    background-color: var(--light-bg);
+    padding: 30px;
+    border-radius: 10px;
+    border: 1px solid var(--border-color);
+}
+
+.loyalty-form h3 {
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+}
+
+.loyalty-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.loyalty-form input,
+.loyalty-form select {
+    background-color: var(--dark-bg);
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+    padding: 12px;
+    border-radius: 5px;
+    font-family: inherit;
+    transition: all 0.3s ease;
+}
+
+.loyalty-form input:focus,
+.loyalty-form select:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 10px rgba(0, 204, 136, 0.3);
+}
+
+.loyalty-form select option {
+    background-color: var(--dark-bg);
+    color: var(--text-color);
+}
+
+.checkbox {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--text-color);
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.checkbox input {
+    cursor: pointer;
+    width: 18px;
+    height: 18px;
+}
+
+.loyalty-form button {
+    margin-top: 10px;
+}
+
 /* Contact Section */
 .contact {
     padding: 80px 20px;
@@ -523,6 +673,10 @@ body {
         grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
         gap: 20px;
     }
+    .loyalty-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
 }
 
 @media screen and (max-width: 768px) {
@@ -590,8 +744,13 @@ body {
     }
 
     .about h2,
-    .contact h2 {
+    .contact h2,
+    .loyalty h2 {
         font-size: 2rem;
+    }
+
+    .loyalty-container {
+        grid-template-columns: 1fr;
     }
 }
 
@@ -618,13 +777,15 @@ body {
 
     .products,
     .about,
-    .contact {
+    .contact,
+    .loyalty {
         padding: 50px 15px;
     }
 
     .products h2,
     .about h2,
-    .contact h2 {
+    .contact h2,
+    .loyalty h2 {
         font-size: 1.5rem;
     }
 
@@ -646,8 +807,17 @@ body {
     }
 
     .cart-content {
-        margin: 50% auto;
+        margin: 10% auto;
         padding: 20px;
+    }
+
+    .cart-item {
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+
+    .cart-item-price {
+        text-align: left;
     }
 
     .product-name {
