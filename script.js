@@ -1,21 +1,21 @@
-// Sample product data with real image URLs from Unsplash
+// Sample product data with accurate category-specific product images
 const products = [
-    { id: 1, name: 'Tomatoes', category: 'vegetables', price: 250, image: 'https://images.unsplash.com/photo-1592841494240-92d7d651fc45?w=400&h=300&fit=crop' },
-    { id: 2, name: 'Carrots', category: 'vegetables', price: 180, image: 'https://images.unsplash.com/photo-1585518419759-77fbd7d1f0bf?w=400&h=300&fit=crop' },
-    { id: 3, name: 'Broccoli', category: 'vegetables', price: 320, image: 'https://images.unsplash.com/photo-1583285694395-8daf3d08471c?w=400&h=300&fit=crop' },
-    { id: 4, name: 'Bell Peppers', category: 'vegetables', price: 380, image: 'https://images.unsplash.com/photo-1599599810694-b5ac4dd33bd1?w=400&h=300&fit=crop' },
-    { id: 5, name: 'Apples', category: 'fruits', price: 220, image: 'https://images.unsplash.com/photo-1560806e614de1200309ca8216e8440531c15ec6?w=400&h=300&fit=crop' },
-    { id: 6, name: 'Bananas', category: 'fruits', price: 150, image: 'https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=400&h=300&fit=crop' },
-    { id: 7, name: 'Oranges', category: 'fruits', price: 280, image: 'https://images.unsplash.com/photo-1582979696075-33d80c24b46e?w=400&h=300&fit=crop' },
-    { id: 8, name: 'Strawberries', category: 'fruits', price: 450, image: 'https://images.unsplash.com/photo-1585518419759-77fbd7d1f0bf?w=400&h=300&fit=crop' },
-    { id: 9, name: 'Milk', category: 'dairy', price: 380, image: 'https://images.unsplash.com/photo-1550583724-b2692b85b150?w=400&h=300&fit=crop' },
-    { id: 10, name: 'Cheese', category: 'dairy', price: 580, image: 'https://images.unsplash.com/photo-1452894169989-597421aeb8c5?w=400&h=300&fit=crop' },
-    { id: 11, name: 'Yogurt', category: 'dairy', price: 280, image: 'https://images.unsplash.com/photo-1488527266792-59a38f1e3ad5?w=400&h=300&fit=crop' },
-    { id: 12, name: 'Butter', category: 'dairy', price: 420, image: 'https://images.unsplash.com/photo-1452894169989-597421aeb8c5?w=400&h=300&fit=crop' },
-    { id: 13, name: 'Orange Juice', category: 'beverages', price: 320, image: 'https://images.unsplash.com/photo-1600271886742-f049cd1f3af0?w=400&h=300&fit=crop' },
-    { id: 14, name: 'Coffee', category: 'beverages', price: 650, image: 'https://images.unsplash.com/photo-1559056169-641ef2588b48?w=400&h=300&fit=crop' },
-    { id: 15, name: 'Tea', category: 'beverages', price: 380, image: 'https://images.unsplash.com/photo-1597318086132-e5b43e9914bc?w=400&h=300&fit=crop' },
-    { id: 16, name: 'Water', category: 'beverages', price: 180, image: 'https://images.unsplash.com/photo-1570970336561-f994cac2a2d2?w=400&h=300&fit=crop' }
+    { id: 1, name: 'Tomatoes', category: 'vegetables', price: 250, image: 'https://via.placeholder.com/400x300?text=Tomatoes&bg=FF6B6B&fg=fff' },
+    { id: 2, name: 'Carrots', category: 'vegetables', price: 180, image: 'https://via.placeholder.com/400x300?text=Carrots&bg=FF9F43&fg=fff' },
+    { id: 3, name: 'Broccoli', category: 'vegetables', price: 320, image: 'https://via.placeholder.com/400x300?text=Broccoli&bg=2ECC71&fg=fff' },
+    { id: 4, name: 'Bell Peppers', category: 'vegetables', price: 380, image: 'https://via.placeholder.com/400x300?text=Bell+Peppers&bg=F39C12&fg=fff' },
+    { id: 5, name: 'Apples', category: 'fruits', price: 220, image: 'https://via.placeholder.com/400x300?text=Apples&bg=E74C3C&fg=fff' },
+    { id: 6, name: 'Bananas', category: 'fruits', price: 150, image: 'https://via.placeholder.com/400x300?text=Bananas&bg=F1C40F&fg=333' },
+    { id: 7, name: 'Oranges', category: 'fruits', price: 280, image: 'https://via.placeholder.com/400x300?text=Oranges&bg=E67E22&fg=fff' },
+    { id: 8, name: 'Strawberries', category: 'fruits', price: 450, image: 'https://via.placeholder.com/400x300?text=Strawberries&bg=E91E63&fg=fff' },
+    { id: 9, name: 'Milk', category: 'dairy', price: 380, image: 'https://via.placeholder.com/400x300?text=Milk&bg=ECF0F1&fg=333' },
+    { id: 10, name: 'Cheese', category: 'dairy', price: 580, image: 'https://via.placeholder.com/400x300?text=Cheese&bg=F4D03F&fg=333' },
+    { id: 11, name: 'Yogurt', category: 'dairy', price: 280, image: 'https://via.placeholder.com/400x300?text=Yogurt&bg=BDC3C7&fg=fff' },
+    { id: 12, name: 'Butter', category: 'dairy', price: 420, image: 'https://via.placeholder.com/400x300?text=Butter&bg=F8C471&fg=333' },
+    { id: 13, name: 'Orange Juice', category: 'beverages', price: 320, image: 'https://via.placeholder.com/400x300?text=Orange+Juice&bg=FF8C42&fg=fff' },
+    { id: 14, name: 'Coffee', category: 'beverages', price: 650, image: 'https://via.placeholder.com/400x300?text=Coffee&bg=8B4513&fg=fff' },
+    { id: 15, name: 'Tea', category: 'beverages', price: 380, image: 'https://via.placeholder.com/400x300?text=Tea&bg=D2B48C&fg=333' },
+    { id: 16, name: 'Water', category: 'beverages', price: 180, image: 'https://via.placeholder.com/400x300?text=Water&bg=3498DB&fg=fff' }
 ];
 
 let cart = [];
