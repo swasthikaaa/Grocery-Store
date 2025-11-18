@@ -21,6 +21,7 @@
                 <li><a href="#loyalty" class="nav-link">Loyalty</a></li>
                 <li><a href="#about" class="nav-link">About</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
+                <li><a href="#orders" class="nav-link">Orders</a></li>
             </ul>
             <div class="cart-icon">
                 <i class="fas fa-shopping-cart"></i>
@@ -54,9 +55,7 @@
                 <button class="filter-btn" data-filter="dairy">Dairy</button>
                 <button class="filter-btn" data-filter="beverages">Beverages</button>
             </div>
-            <div class="products-grid" id="productsGrid">
-                <!-- Products will be loaded here by JavaScript -->
-            </div>
+            <div class="products-grid" id="productsGrid"></div>
         </div>
     </section>
 
@@ -77,7 +76,7 @@
         </div>
     </div>
 
-    <!-- Loyalty Registration Section -->
+    <!-- Loyalty Section -->
     <section class="loyalty" id="loyalty">
         <div class="container">
             <h2>FreshMart Loyalty Program</h2>
@@ -152,6 +151,16 @@
                 <textarea placeholder="Your Message" rows="5" required></textarea>
                 <button type="submit" class="btn-primary">Send Message</button>
             </form>
+        </div>
+    </section>
+
+    <!-- Placed Orders Section -->
+    <section class="orders" id="orders">
+        <div class="container">
+            <h2>Placed Orders</h2>
+            <div id="ordersList" class="orders-list">
+                <!-- Orders will load here -->
+            </div>
         </div>
     </section>
 
