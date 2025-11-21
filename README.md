@@ -88,7 +88,7 @@ A modern, responsive online grocery store built with HTML5, CSS3, and JavaScript
 
 ## Demo
 
-Visit the live demo: [FreshMart on Vercel](#)
+Visit the live demo: https://grocery-store-dun.vercel.app/
 
 ## Author
 
