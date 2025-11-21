@@ -16,19 +16,34 @@ function loadOrders() {
         return;
     }
 
-    let html = '';
+    let html = `<table class="orders-table">
+        <thead>
+            <tr>
+                <th>Order ID</th>
+                <th>Date & Time</th>
+                <th>Total (Rs.)</th>
+                <th>Items</th>
+            </tr>
+        </thead>
+        <tbody>
+    `;
+
     orders.forEach(order => {
         html += `
-            <div class="order-card">
-                <h3>Order #${order.id}</h3>
-                <p><strong>Date:</strong> ${order.placedAt}</p>
-                <p><strong>Total:</strong> Rs.${order.total.toFixed(2)}</p>
-                <ul>
-                    ${order.items.map(item => `<li>${item.name} x ${item.quantity}</li>`).join('')}
-                </ul>
-            </div>
+            <tr>
+                <td>#${order.id}</td>
+                <td>${order.placedAt}</td>
+                <td>${order.total.toFixed(2)}</td>
+                <td>
+                    <ul>
+                        ${order.items.map(item => `<li>${item.name} x ${item.quantity}</li>`).join('')}
+                    </ul>
+                </td>
+            </tr>
         `;
     });
+
+    html += `</tbody></table>`;
     ordersList.innerHTML = html;
 }
 
