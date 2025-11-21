@@ -7,26 +7,62 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
     <style>
-        .orders-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
+        /* Hide hero section for orders page */
+        .hero {
+            display: none;
         }
+
+        /* Orders page layout */
+        .orders-page {
+            padding: 40px 20px;
+            min-height: calc(100vh - 160px); /* keeps footer at bottom */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        #ordersList {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+        .orders-table {
+            width: 80%;
+            border-collapse: collapse;
+            margin-bottom: 40px; /* spacing before footer */
+        }
+
         .orders-table th, .orders-table td {
             border: 1px solid #ddd;
-            padding: 10px;
+            padding: 12px;
             text-align: left;
+            vertical-align: top;
         }
+
         .orders-table th {
             background-color: #28a745;
             color: white;
         }
+
         .orders-table td ul {
             margin: 0;
             padding-left: 20px;
         }
+
         .orders-table td ul li {
             list-style: disc;
+        }
+
+        p {
+            font-size: 16px;
+            text-align: center;
         }
     </style>
 </head>
@@ -57,15 +93,6 @@
             </div>
         </div>
     </nav>
-
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="hero-content">
-            <h1>Your Orders</h1>
-            <p>View all your placed orders with FreshMart</p>
-            <a href="index.html#products" class="btn-primary">Back to Shopping</a>
-        </div>
-    </section>
 
     <!-- Orders Section -->
     <section class="orders-page" id="orders">
