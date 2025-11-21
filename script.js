@@ -18,7 +18,6 @@ const products = [
   { id: 16, name: 'Water', category: 'beverages', price: 180, image: '' }
 ];
 
-
 let cart = [];
 let currentFilter = 'all';
 
@@ -52,8 +51,9 @@ function loadProducts(filter = 'all') {
     });
 }
 
-// Filter buttons
+// Filter buttons + Hamburger menu
 function setupEventListeners() {
+    // Filter buttons
     const filterBtns = document.querySelectorAll('.filter-btn');
     filterBtns.forEach(btn => {
         btn.addEventListener('click', function() {
@@ -64,22 +64,24 @@ function setupEventListeners() {
         });
     });
 
+    // Hamburger menu toggle
     const hamburger = document.querySelector('.hamburger');
     const navMenu = document.querySelector('.nav-menu');
-
     if (hamburger) {
         hamburger.addEventListener('click', () => navMenu.classList.toggle('active'));
     }
 
+    // Close menu on link click
     const navLinks = document.querySelectorAll('.nav-link');
     navLinks.forEach(link => link.addEventListener('click', () => navMenu.classList.remove('active')));
 
+    // Close menu on outside click
     document.addEventListener('click', (e) => {
         if (!e.target.closest('.navbar')) navMenu.classList.remove('active');
     });
 }
 
-// Cart icon
+// Cart icon click
 function setupCartIcon() {
     const cartIcon = document.querySelector('.cart-icon');
     cartIcon.addEventListener('click', openCart);

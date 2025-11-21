@@ -78,6 +78,50 @@ body {
     color: var(--primary-color);
 }
 
+/* Hamburger menu */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background: var(--text-color);
+    border-radius: 2px;
+}
+
+/* Mobile Navbar */
+@media screen and (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+
+    .nav-menu {
+        position: absolute;
+        top: 70px;
+        left: -100%;
+        flex-direction: column;
+        width: 100%;
+        background-color: var(--light-bg);
+        gap: 0;
+        transition: 0.3s;
+        border-bottom: 2px solid var(--primary-color);
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+
+    .nav-menu li {
+        padding: 15px 0;
+        border-bottom: 1px solid var(--border-color);
+    }
+}
+
+
 /* Hero Section */
 .hero {
     background: linear-gradient(135deg, var(--secondary-color) 0%, var(--dark-bg) 100%);
