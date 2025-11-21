@@ -1,3 +1,4 @@
+/* General Reset and Root Colors */
 * {
     margin: 0;
     padding: 0;
@@ -21,13 +22,14 @@ body {
     line-height: 1.6;
 }
 
+/* Container */
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
 }
 
-/* Navigation */
+/* Navbar */
 .navbar {
     background-color: var(--light-bg);
     border-bottom: 2px solid var(--primary-color);
@@ -68,54 +70,12 @@ body {
 .nav-link {
     color: var(--text-color);
     text-decoration: none;
-    transition: color 0.3s ease;
     font-weight: 500;
+    transition: color 0.3s ease;
 }
 
 .nav-link:hover {
     color: var(--primary-color);
-}
-
-.cart-icon {
-    position: relative;
-    cursor: pointer;
-    font-size: 1.5rem;
-    color: var(--primary-color);
-    transition: transform 0.3s ease;
-}
-
-.cart-icon:hover {
-    transform: scale(1.1);
-}
-
-.cart-count {
-    position: absolute;
-    top: -8px;
-    right: -8px;
-    background-color: var(--accent);
-    color: white;
-    border-radius: 50%;
-    width: 20px;
-    height: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.8rem;
-    font-weight: bold;
-}
-
-.hamburger {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
-}
-
-.hamburger span {
-    width: 25px;
-    height: 3px;
-    background-color: var(--primary-color);
-    margin: 5px 0;
-    transition: 0.3s;
 }
 
 /* Hero Section */
@@ -190,9 +150,9 @@ body {
     padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
-    transition: all 0.3s ease;
     font-weight: 500;
     text-transform: uppercase;
+    transition: all 0.3s ease;
 }
 
 .filter-btn:hover,
@@ -225,15 +185,22 @@ body {
     box-shadow: 0 15px 40px rgba(0, 204, 136, 0.2);
 }
 
+/* Fixed product image */
 .product-image {
     width: 100%;
     height: 200px;
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 4rem;
-    color: white;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    overflow: hidden;
+}
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* ensures image stays within card */
+    display: block;
 }
 
 .product-info {
